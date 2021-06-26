@@ -18,6 +18,7 @@ mongoDB.once('open', ()=>{
   console.log('Connected to MongoDB...');
 });
 
+//defining the routes - a connection, files with routes
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
 let booksRouter = require('../routes/book');
@@ -28,6 +29,7 @@ let app = express();
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs'); // express  -e
 
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -35,6 +37,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
+//using the route
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/book-list', booksRouter);
