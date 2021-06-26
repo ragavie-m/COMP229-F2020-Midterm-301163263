@@ -23,7 +23,7 @@
     "popper.js": "^1.16.1"
   },
   "description":"Comp229 week 7 midterm web app for Favourite Books List",
-  "main": "index.js",
+  "main": "server/controllers/index.js",
   "devDependencies": {},
   "repository": {
     "type" : "git",

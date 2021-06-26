@@ -50,12 +50,64 @@ module.exports.processAddPage = (req, res, next) => {
 /*
 Add your code here to display EDIT
 */
+module.exports.displayEditPage = ('/edit/:id', (req,res,next) => {
+    let id = req.params.id;
+
+    Books.findById(id, (err, bookToEdit) => {
+        if(err)
+        {
+            console.log(err);
+            res.end(err);
+        }
+        else
+        {
+            res.render('book/edit', {title: 'Edit Book', book: bookToEdit})
+        }
+    });
+});
 
 /*
 Add your code here to process EDIT
 */
+module.exports.processEditPage = ('/edit/:id', (req,res,next) => {
+    let id = req.params.id
+    let updatedBook = Book({
+        "_id" : id,
+        "name": req.body.name,
+        "author": req.body.author,
+        "published": req.body.published,
+        "description": req.body.description,
+        "price": req.body.price
 
+    })
+    Book.updateOne({_id:id}, updatedBook, (err) => {
+        if(err)
+        {
+            console.log(err);
+            res.end(err);
+        }
+        else
+        {
+            res.redirect('/book-list');
+        }
+    });
+});
 
 /*
 Add your code here to perform DELETE operation
 */
+module.exports.DeletePage = ('/delete/:id', (req,res,next) => {
+    let id = req.params.id;
+
+    Book.remove({_id: id}, (err) => {
+        if(err)
+        {
+            console.log(err);
+            res.end(err);
+        }
+        else
+        {
+            res.redirect('/book-list');
+        }
+    });
+});
