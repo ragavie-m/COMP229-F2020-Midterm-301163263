@@ -50,7 +50,7 @@ module.exports.processAddPage = (req, res, next) => {
 /*
 Add your code here to display EDIT
 */
-module.exports.displayEditPage = ('/edit/:id', (req,res,next) => {
+module.exports.displayEditPage = (req,res,next) => {
     let id = req.params.id;
 
     Books.findById(id, (err, bookToEdit) => {
@@ -61,15 +61,15 @@ module.exports.displayEditPage = ('/edit/:id', (req,res,next) => {
         }
         else
         {
-            res.render('book/edit', {title: 'Edit Book', book: bookToEdit})
+            res.render('book/edit', {title: 'Edit Book', book: bookToEdit});
         }
     });
-});
+}
 
 /*
 Add your code here to process EDIT
 */
-module.exports.processEditPage = ('/edit/:id', (req,res,next) => {
+module.exports.processEditPage = (req,res,next) => {
     let id = req.params.id
     let updatedBook = Book({
         "_id" : id,
@@ -91,12 +91,12 @@ module.exports.processEditPage = ('/edit/:id', (req,res,next) => {
             res.redirect('/book-list');
         }
     });
-});
+}
 
 /*
 Add your code here to perform DELETE operation
 */
-module.exports.deletePage = ('/delete/:id', (req,res,next) => {
+module.exports.deletePage = (req,res,next) => {
     let id = req.params.id;
 
     Book.remove({_id: id}, (err) => {
@@ -110,4 +110,4 @@ module.exports.deletePage = ('/delete/:id', (req,res,next) => {
             res.redirect('/book-list');
         }
     });
-});
+}

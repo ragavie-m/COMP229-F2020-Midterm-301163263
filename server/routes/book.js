@@ -25,13 +25,13 @@ router.get('/edit/:id', bookController.displayEditPage);
 * add your code to 
 * POST Route for processing the Edit page - UPDATE Operation 
 */
-router.post('/add', bookController.processEditPage);
+router.post('/edit/:id', bookController.processEditPage);
 
 
 /* add your code to 
 *  GET to perform  Deletion - DELETE Operation 
 */
-router.get('/add', bookController.deletePage);
+router.get('/delete/:id', bookController.deletePage);
 
 //built all routes and then export them into a single package
 module.exports = router;
