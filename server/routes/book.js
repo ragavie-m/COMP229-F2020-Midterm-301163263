@@ -8,7 +8,6 @@ let Book = require('../models/book');
 let bookController = require('../controllers/book');
 
 
-
 /* GET Route for the Book List page - READ Operation */
 router.get('/', bookController.displayBookList);
 
