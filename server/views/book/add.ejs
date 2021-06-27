@@ -10,6 +10,7 @@
         <div class = "offset-md-3 col-md-6">
             <h1> <%= title %></h1>
 
+                <!--Creates fields for each variable in the books list ie name, price, description for user to populate into database-->
                 <form class = "form" method = "POST">
                     <div class = "form-group">
                         <label for = "nameTextField">Book Name</label>
@@ -36,6 +37,8 @@
                         <input type = "text" class = "form-control" id = "priceTextField" placeholder = "Enter the Price of the Book" name = "price" required>
                     </div>
                     
+                    
+                    <!--Creates a submit and cancel button for user to click. submit will process the change and cancel will not-->
                     <button class = "btn btn-primary" type = "submit">
                         <i class = "fas fa-edit"></i> Submit </button>
 

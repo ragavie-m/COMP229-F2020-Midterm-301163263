@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 
-/* Created by Ragavie Mohanathas on June 26, 2021 for Centennial College COMP229 */
+// Created by Ragavie Mohanathas on June 26, 2021 for Centennial College COMP229 
+
+/* Made to crete a Favourite Book List web app with edits to the routing files and 
+Books List page so that a user can Add, Delete and Edit any Book item from the Database. */
 
 /**
  * Module dependencies.

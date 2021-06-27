@@ -8,11 +8,11 @@ let mongoose = require('mongoose');
  */
 
 let bookModel = mongoose.Schema({
-    Name:String,
+    name:String,
     author: String,
     published: String,
     description: String,
-    Price: Number
+    price: Number
 },
 {
     collection: "book"
