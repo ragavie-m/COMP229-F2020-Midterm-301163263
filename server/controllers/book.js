@@ -96,7 +96,7 @@ module.exports.processEditPage = ('/edit/:id', (req,res,next) => {
 /*
 Add your code here to perform DELETE operation
 */
-module.exports.DeletePage = ('/delete/:id', (req,res,next) => {
+module.exports.deletePage = ('/delete/:id', (req,res,next) => {
     let id = req.params.id;
 
     Book.remove({_id: id}, (err) => {
